@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AssociateAndroidDeveloperPreparation</string>
+    <string name="title_activity_toast">ToastActivity</string>
 </resources>
