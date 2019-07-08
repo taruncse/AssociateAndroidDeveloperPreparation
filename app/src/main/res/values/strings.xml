@@ -2,4 +2,9 @@
     <string name="app_name">AssociateAndroidDeveloperPreparation</string>
     <string name="title_activity_toast">ToastActivity</string>
     <string name="title_activity_localization">LocalizationActivity</string>
+
+    <string name="hello">Hello World</string>
+    <string name="tutlane">Tutlane</string>
+    <string name="android">Android Tutorial</string>
+    <string name="reigster">Register</string>
 </resources>
