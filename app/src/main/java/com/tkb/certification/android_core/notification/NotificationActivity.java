@@ -24,7 +24,12 @@ public class NotificationActivity extends AppCompatActivity {
 
     // Constants for the notification actions buttons.
     private static final String ACTION_UPDATE_NOTIFICATION =
-            "com.android.example.notifyme.ACTION_UPDATE_NOTIFICATION";
+            "com.tkb.certification.android_core.notification.ACTION_UPDATE_NOTIFICATION";
+
+    // Constants for the notification actions buttons.
+    private static final String ACTION_CANCEL_NOTIFICATION =
+            "com.tkb.certification.android_core.notification.ACTION_CANCEL_NOTIFICATION";
+
     // Notification channel ID.
     private static final String PRIMARY_CHANNEL_ID =
             "primary_notification_channel";
@@ -54,9 +59,12 @@ public class NotificationActivity extends AppCompatActivity {
 
         // Register the broadcast receiver to receive the update action from
         // the notification.
-        registerReceiver(mReceiver,
-                new IntentFilter(ACTION_UPDATE_NOTIFICATION));
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(ACTION_UPDATE_NOTIFICATION);
+        intentFilter.addAction(ACTION_CANCEL_NOTIFICATION);
 
+
+        registerReceiver(mReceiver, intentFilter);
         // Add onClick handlers to all the buttons.
         button_notify = findViewById(R.id.notify);
         button_notify.setOnClickListener(new View.OnClickListener() {
@@ -174,13 +182,19 @@ public class NotificationActivity extends AppCompatActivity {
                 (this, NOTIFICATION_ID, notificationIntent,
                         PendingIntent.FLAG_UPDATE_CURRENT);
 
+        Intent cancelIntent = new Intent(ACTION_CANCEL_NOTIFICATION);
+        PendingIntent notificationCancelPendingIntent = PendingIntent.getBroadcast(this, NOTIFICATION_ID, cancelIntent, PendingIntent.FLAG_ONE_SHOT);
+
+
         // Build the notification with all of the parameters.
         NotificationCompat.Builder notifyBuilder = new NotificationCompat
                 .Builder(this, PRIMARY_CHANNEL_ID)
                 .setContentTitle(getString(R.string.notification_title))
                 .setContentText(getString(R.string.notification_text))
                 .setSmallIcon(R.drawable.ic_android)
-                .setAutoCancel(true).setContentIntent(notificationPendingIntent)
+                .setDeleteIntent(notificationCancelPendingIntent)
+                .setAutoCancel(true)
+                .setContentIntent(notificationPendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setDefaults(NotificationCompat.DEFAULT_ALL);
         return notifyBuilder;
@@ -255,7 +269,14 @@ public class NotificationActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             // Update the notification.
-            updateNotification();
+            String intentAction = intent.getAction();
+            if (intentAction != null) {
+                switch (intentAction){
+                    case ACTION_UPDATE_NOTIFICATION: updateNotification(); break;
+                    case ACTION_CANCEL_NOTIFICATION: setNotificationButtonState(true, false, false);
+                    default: break;
+                }
+            }
         }
     }
 }
