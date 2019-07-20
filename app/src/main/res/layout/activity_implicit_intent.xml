@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".android_core.implecitIntent.ImplicitIntentActivity">
+
+    <Button
+        android:id="@+id/open_website_button"
+        android:layout_width="343dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:onClick="openWebsite"
+        android:text="@string/button_uri"
+        app:layout_constraintBottom_toTopOf="@+id/location_editText"
+        app:layout_constraintEnd_toEndOf="@+id/website_editText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/website_editText"
+        app:layout_constraintTop_toBottomOf="@+id/website_editText" />
+
+    <Button
+        android:id="@+id/open_location_button"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:onClick="openLocation"
+        android:text="@string/button_loc"
+        app:layout_constraintBottom_toTopOf="@+id/share_editText"
+        app:layout_constraintEnd_toEndOf="@+id/location_editText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/location_editText"
+        app:layout_constraintTop_toBottomOf="@+id/location_editText" />
+
+    <Button
+        android:id="@+id/share_text_button"
+        android:layout_width="337dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:onClick="shareText"
+        android:text="@string/button_share"
+        app:layout_constraintBottom_toTopOf="@+id/picture"
+        app:layout_constraintEnd_toEndOf="@+id/share_editText"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/share_editText"
+        app:layout_constraintTop_toBottomOf="@+id/share_editText" />
+
+    <Button
+        android:id="@+id/picture"
+        android:layout_width="341dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="8dp"
+        android:onClick="takePic"
+        android:text="@string/take_a_picture"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/share_text_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/share_text_button"
+        app:layout_constraintTop_toBottomOf="@+id/share_text_button" />
+
+    <EditText
+        android:id="@+id/website_editText"
+        android:layout_width="345dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/editText_uri"
+        app:layout_constraintBottom_toTopOf="@+id/open_website_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/location_editText"
+        android:layout_width="343dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/editText_loc"
+        app:layout_constraintBottom_toTopOf="@+id/open_location_button"
+        app:layout_constraintEnd_toEndOf="@+id/open_website_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/open_website_button"
+        app:layout_constraintTop_toBottomOf="@+id/open_website_button" />
+
+    <EditText
+        android:id="@+id/share_editText"
+        android:layout_width="337dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/editText_share"
+        app:layout_constraintBottom_toTopOf="@+id/share_text_button"
+        app:layout_constraintEnd_toEndOf="@+id/open_location_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/open_location_button"
+        app:layout_constraintTop_toBottomOf="@+id/open_location_button" />
+</androidx.constraintlayout.widget.ConstraintLayout>
