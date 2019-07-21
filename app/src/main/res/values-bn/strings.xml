@@ -3,4 +3,7 @@
     <string name="tutlane">অ্যান্ড্রয়েড টিউটোরিয়াল</string>
     <string name="android">অ্যান্ড্রয়েড</string>
     <string name="reigster">নিবন্ধন</string>
+    <string name="time_picker">TimePicker</string>
+    <string name="date_message">DatePicer</string>
+    <string name="date_picker">DatePicker</string>
 </resources>

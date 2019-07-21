@@ -28,4 +28,7 @@
     <string name="button_share">Share This Text</string>
     <string name="take_a_picture">Take a Picture</string>
     <string name="title_activity_picker">PickerActivity</string>
+    <string name="time_picker">TimePicker</string>
+    <string name="date_message">Date:</string>
+    <string name="date_picker">DatePicker</string>
 </resources>
