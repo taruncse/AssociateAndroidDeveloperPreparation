@@ -53,6 +53,7 @@ public class PickerActivity extends AppCompatActivity implements PickerCallBack{
         String month_string = Integer.toString(month + 1);
         String day_string = Integer.toString(dayOfMonth);
         String date_message = day_string + "/" + month_string + "/" + year_string;
+        txtDate.setText(date_message);
         Toast.makeText(getApplicationContext(), getString(R.string.date_message) + date_message, Toast.LENGTH_SHORT).show();
     }
 
@@ -67,6 +68,7 @@ public class PickerActivity extends AppCompatActivity implements PickerCallBack{
         String hour_string = Integer.toString(hour);
         String minute_string = Integer.toString(minute);
         String time_message = hour_string + ":" + minute_string;
+        txtTime.setText(time_message);
         Toast.makeText(getApplicationContext(), "Time: " + time_message, Toast.LENGTH_SHORT).show();
     }
 }
