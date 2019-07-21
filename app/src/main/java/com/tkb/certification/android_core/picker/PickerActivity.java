@@ -12,7 +12,7 @@ import android.view.View;
 
 import com.tkb.certification.R;
 
-public class PickerActivity extends AppCompatActivity {
+public class PickerActivity extends AppCompatActivity implements PickerCallBack{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,4 +31,13 @@ public class PickerActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void processDatePickerResult(int year, int month, int dayOfMonth) {
+
+    }
+
+    @Override
+    public void processTimePickerResult(int hourOfDay, int minute) {
+
+    }
 }
