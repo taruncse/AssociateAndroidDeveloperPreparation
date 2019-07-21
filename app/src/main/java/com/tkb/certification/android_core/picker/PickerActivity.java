@@ -17,6 +17,7 @@ import com.tkb.certification.R;
 
 public class PickerActivity extends AppCompatActivity implements PickerCallBack{
 
+    TextView txtTime, txtDate ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +34,13 @@ public class PickerActivity extends AppCompatActivity implements PickerCallBack{
             }
         });
 
+        initView();
     }
 
+    private void initView() {
+        txtDate = findViewById(R.id.txtDate);
+        txtTime = findViewById(R.id.txtTime);
+    }
 
     public void showDatePicker(View view) {
         DialogFragment fragment = new DatePickerFragment();
