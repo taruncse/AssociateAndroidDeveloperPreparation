@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".android_core.picker.PickerActivity"
+    tools:showIn="@layout/activity_picker">
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="167dp"
+        android:layout_height="26dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtTime"
+        app:layout_constraintEnd_toStartOf="@+id/txtTime"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtTime"
+        android:layout_width="163dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/txtDate"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPickDate"
+        android:layout_width="381dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:text="Pick a date"
+        app:layout_constraintBottom_toTopOf="@+id/btnPickTime"
+        app:layout_constraintEnd_toEndOf="@+id/txtTime"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/txtDate"
+        app:layout_constraintTop_toBottomOf="@+id/txtTime" />
+
+    <Button
+        android:id="@+id/btnPickTime"
+        android:layout_width="375dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="24dp"
+        android:text="Pick a time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnPickDate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/btnPickDate"
+        app:layout_constraintTop_toBottomOf="@+id/btnPickDate" />
+</androidx.constraintlayout.widget.ConstraintLayout>
