@@ -7,8 +7,11 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.DialogFragment;
 
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tkb.certification.R;
 
@@ -29,15 +32,31 @@ public class PickerActivity extends AppCompatActivity implements PickerCallBack{
                         .setAction("Action", null).show();
             }
         });
-    }
-
-    @Override
-    public void processDatePickerResult(int year, int month, int dayOfMonth) {
 
     }
 
-    @Override
-    public void processTimePickerResult(int hourOfDay, int minute) {
 
+
+    public void showDatePicker(View view) {
+
+    }
+
+    @Override
+    public void processDatePickerResult(int year, int month, int dayOfMonth){
+
+    }
+
+
+    public void showTimePicker(View view) {
+        DialogFragment fragment = new TimePickerFragment();
+        fragment.show(getSupportFragmentManager(), getString(R.string.time_picker));
+    }
+
+    @Override
+    public void processTimePickerResult(int hour, int minute){
+        String hour_string = Integer.toString(hour);
+        String minute_string = Integer.toString(minute);
+        String time_message = hour_string + ":" + minute_string;
+        Toast.makeText(getApplicationContext(), "Time: " + time_message, Toast.LENGTH_SHORT).show();
     }
 }
