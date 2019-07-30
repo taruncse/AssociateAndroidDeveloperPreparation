@@ -1,5 +1,13 @@
 # AssociateAndroidDeveloperPreparation
 
+# There are five main topics for this preparation
+
+* Android core
+* User interface
+* Data management
+* Debugging
+* Testing
+
 # Urls
 * https://developers.google.com/training/certification/associate-android-developer/study-guide/
 * https://codelabs.developers.google.com/android-training/
