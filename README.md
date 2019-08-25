@@ -15,6 +15,7 @@
 * https://developer.android.com/courses/advanced-training/toc
 * https://google-developer-training.github.io/android-developer-advanced-course-concepts/index-book.html
 * https://developers.google.com/training/courses/android-advanced
+* https://developer.android.com/courses
 * https://github.com/MahakAggarwal/Android-Developer-Fundamentals-Version-2
 * https://github.com/googlesamples/android-sunflower
 * https://github.com/google/iosched
